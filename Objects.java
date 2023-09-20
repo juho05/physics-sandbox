@@ -18,7 +18,7 @@ class FreierFall extends Obj {
         pos_x = pos_x + vel_x * deltaTime;
         pos_y = pos_y + vel_y * deltaTime;
 
-        if (pos_y - radius <= 0) {
+        if (pos_y - radius <= 0 && vel_y < 0) {
             vel_y = -vel_y;
         }
     }
