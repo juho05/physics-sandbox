@@ -17,8 +17,8 @@ class Simulation {
 
     static {
         // Add objects
-        objects.add(new FreierFall(20, 60, Color.RED));
-        objects.add(new FreierFall(40, 50, Color.BLUE));
+        objects.add(new FallingObject(20, 60, Color.RED));
+        objects.add(new FallingObject(40, 50, Color.BLUE));
     }
 
     static void update(double deltaTime) {

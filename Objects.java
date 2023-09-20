@@ -1,7 +1,7 @@
 import java.awt.Color;
 
-class FreierFall extends Obj {
-    FreierFall(double x, double y, Color c) {
+class FallingObject extends Obj {
+    FallingObject(double x, double y, Color c) {
         pos_x = x;
         pos_y = y;
         color = c;
