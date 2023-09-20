@@ -26,7 +26,9 @@ class Main {
 
         while (true) {
             long start = System.currentTimeMillis();
-            Simulation.update(dt / 1000);
+            for (int i = 0; i < Simulation.PHYSICS_SUBSTEPS; i++) {
+                Simulation.update(dt / 1000 / Simulation.PHYSICS_SUBSTEPS);
+            }
             canvas.repaint();
             Thread.sleep((long) Math.max(0, (1000 / Simulation.TARGET_FPS) - (System.currentTimeMillis() - start)));
             dt = System.currentTimeMillis() - start;
