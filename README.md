@@ -50,7 +50,7 @@ class FallingObject extends Obj {
         pos_y = pos_y + vel_y * deltaTime;
 
         // Bounce when the object hits the ground.
-        if (pos_y - radius <= 0) {
+        if (pos_y - radius <= 0 && vel_y < 0) {
             vel_y = -vel_y;
         }
     }
