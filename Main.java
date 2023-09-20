@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        JFrame frame = new JFrame("Test", null);
+        JFrame frame = new JFrame("Physics Sandbox", null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel canvas = new JPanel() {
