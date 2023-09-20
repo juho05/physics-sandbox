@@ -24,7 +24,7 @@ static {
 
 This is enough to show a black circle with radius `1` at `0,0` (bottom-left corner).
 To make it do something manipulate the `pos_x` and `pos_y` variables with the help of the `vel_x`, `vel_y`, `acc_x` and `acc_y` variables.
-The color and radius of the object can be change with the `color` and `radius` variables, respectively.
+The color and radius of the object can be changed with the `color` and `radius` variables, respectively.
 
 Example (*Objects.java*):
 
