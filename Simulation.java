@@ -46,6 +46,7 @@ abstract class Obj {
     double acc_y = 0;
 
     int radius = 1;
+    double mass = 1;
     Color color = Color.BLACK;
 
     abstract void update(double deltaTime);
