@@ -9,7 +9,7 @@ class Simulation {
     // World height in meters
     static final int HEIGHT = 80;
     // Frames per second target
-    static final double TARGET_FPS = 100;
+    static final double TARGET_FPS = 60;
     // How many pixels represent a meter
     static final int PIXELS_PER_METER = 10;
     // Physics updates per frame
