@@ -1,5 +1,5 @@
+import java.awt.Canvas;
 import java.awt.Graphics2D;
-import java.awt.Insets;
 import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
 
@@ -8,25 +8,24 @@ import javax.swing.JFrame;
 class Main {
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame("Physics Sandbox", null);
-        frame.setSize(Simulation.WIDTH * Simulation.PIXELS_PER_METER, Simulation.HEIGHT * Simulation.PIXELS_PER_METER);
-        Insets insets = frame.getInsets();
-        int insetWide = insets.left + insets.right;
-        int insetTall = insets.top + insets.bottom;
-        frame.setSize(frame.getWidth() + insetWide,
-                frame.getHeight() + insetTall);
+
+        Canvas canvas = new Canvas();
+        canvas.setSize(Simulation.WIDTH * Simulation.PIXELS_PER_METER, Simulation.HEIGHT * Simulation.PIXELS_PER_METER);
+        frame.add(canvas);
+        frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
         double dt = 1000 / Simulation.TARGET_FPS;
 
-        frame.createBufferStrategy(2);
+        canvas.createBufferStrategy(2);
         while (true) {
             long start = System.currentTimeMillis();
             for (int i = 0; i < Simulation.PHYSICS_SUBSTEPS; i++) {
                 Simulation.update(dt / 1000 / Simulation.PHYSICS_SUBSTEPS);
             }
-            BufferStrategy bufferStrategy = frame.getBufferStrategy();
+            BufferStrategy bufferStrategy = canvas.getBufferStrategy();
             try {
                 Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
                 g.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION,
