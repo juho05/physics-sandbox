@@ -5,13 +5,13 @@ import java.util.List;
 
 class Simulation {
     // World width in meters
-    static final int WIDTH = 80;
+    static final double WIDTH = 80;
     // World height in meters
-    static final int HEIGHT = 80;
+    static final double HEIGHT = 80;
     // Frames per second target
     static final double TARGET_FPS = 60;
     // How many pixels represent a meter
-    static final int PIXELS_PER_METER = 10;
+    static final double PIXELS_PER_METER = 10;
     // Physics updates per frame
     static final int PHYSICS_SUBSTEPS = 4;
 
@@ -30,7 +30,7 @@ class Simulation {
     }
 
     static void render(Graphics g) {
-        g.clearRect(0, 0, WIDTH * PIXELS_PER_METER, HEIGHT * PIXELS_PER_METER);
+        g.clearRect(0, 0, (int) Math.round(WIDTH * PIXELS_PER_METER), (int) Math.round(HEIGHT * PIXELS_PER_METER));
         for (Obj obj : objects) {
             obj.render(g);
         }
@@ -45,7 +45,7 @@ abstract class Obj {
     double acc_x = 0;
     double acc_y = 0;
 
-    int radius = 1;
+    double radius = 1;
     double mass = 1;
     Color color = Color.BLACK;
 
@@ -53,9 +53,10 @@ abstract class Obj {
 
     void render(Graphics g) {
         g.setColor(color);
-        g.fillOval(Math.round((float) (pos_x - radius) * Simulation.PIXELS_PER_METER),
-                Simulation.HEIGHT * Simulation.PIXELS_PER_METER
-                        - Math.round((float) (pos_y + radius) * Simulation.PIXELS_PER_METER),
-                radius * 2 * Simulation.PIXELS_PER_METER, radius * 2 * Simulation.PIXELS_PER_METER);
+        g.fillOval((int) (Math.round(pos_x - radius) * Simulation.PIXELS_PER_METER),
+                (int) (Simulation.HEIGHT * Simulation.PIXELS_PER_METER
+                        - Math.round((float) (pos_y + radius) * Simulation.PIXELS_PER_METER)),
+                (int) Math.round(radius * 2 * Simulation.PIXELS_PER_METER),
+                (int) Math.round(radius * 2 * Simulation.PIXELS_PER_METER));
     }
 }

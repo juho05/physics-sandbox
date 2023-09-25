@@ -10,7 +10,8 @@ class Main {
         JFrame frame = new JFrame("Physics Sandbox", null);
 
         Canvas canvas = new Canvas();
-        canvas.setSize(Simulation.WIDTH * Simulation.PIXELS_PER_METER, Simulation.HEIGHT * Simulation.PIXELS_PER_METER);
+        canvas.setSize((int) Math.round(Simulation.WIDTH * Simulation.PIXELS_PER_METER),
+                (int) Math.round(Simulation.HEIGHT * Simulation.PIXELS_PER_METER));
         frame.add(canvas);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
