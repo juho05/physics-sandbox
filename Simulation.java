@@ -53,9 +53,9 @@ abstract class Obj {
 
     void render(Graphics g) {
         g.setColor(color);
-        g.fillOval((int) (Math.round(pos_x - radius) * Simulation.PIXELS_PER_METER),
+        g.fillOval((int) (Math.round((pos_x - radius) * Simulation.PIXELS_PER_METER)),
                 (int) (Simulation.HEIGHT * Simulation.PIXELS_PER_METER
-                        - Math.round((float) (pos_y + radius) * Simulation.PIXELS_PER_METER)),
+                        - Math.round((pos_y + radius) * Simulation.PIXELS_PER_METER)),
                 (int) Math.round(radius * 2 * Simulation.PIXELS_PER_METER),
                 (int) Math.round(radius * 2 * Simulation.PIXELS_PER_METER));
     }
