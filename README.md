@@ -8,7 +8,7 @@ A simple sandbox to implement physics integrators and show their results graphic
 
 ### Run
 
-Open the repository in [VS Code](https://code.visualstudio.com) with the [Language Support for Java(TM) by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java) extension and hit *F5*;
+Open the repository in [VS Code](https://code.visualstudio.com) with the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) by Microsoft and hit *F5*;
 
 ### Add Objects
 
