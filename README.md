@@ -6,14 +6,33 @@ A simple sandbox to implement physics integrators and show their results graphic
 
 ## Usage
 
-### Run
+### Prerequisites
 
-Open the repository in [VS Code](https://code.visualstudio.com) with the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) by Microsoft and hit *F5*;
+- [VS Code](https://code.visualstudio.com)
+  - with the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) by *Microsoft*
+- [OpenJDK](https://adoptium.net)
+
+### Execute the Program
+
+1. Clone/download this repository and open it in *VS Code*.
+2. Open one of the `*.java` files. (if there are any errors, open `Main.java` once to let *VS Code* know that it is the entry point of the program)
+3. Wait for any progress bars in the bottom right corner to complete.
+4. Hit *F5* or the small arrow in to top right corner of the editor window.
 
 ### Add Objects
 
-Create a new class in `Objects.java` which extends `Obj` and override the `update(double deltaTime)` method.
-Now add your object to the `Simulation.objects` list in `Simulation.java` like so:
+Create a new class in `Objects.java` which extends `Obj` and override the `update(double deltaTime)` method:
+
+```java
+class FallingObject extends Obj {
+    @Override
+    void update(double deltaTime) {
+        // TODO
+    }
+}
+```
+
+Now add your object to the `Simulation.objects` list in `Simulation.java`:
 
 ```java
 static {
@@ -24,7 +43,7 @@ static {
 
 This is enough to show a black circle with radius `1` at `0,0` (bottom-left corner).
 To make it do something manipulate the `pos_x` and `pos_y` variables with the help of the `vel_x`, `vel_y`, `acc_x` and `acc_y` variables.
-The color and radius of the object can be changed with the `color` and `radius` variables, respectively.
+The color, radius and mass of the object can be changed with the `color`, `radius` and `mass` variables, respectively.
 
 Example (*Objects.java*):
 
@@ -57,7 +76,7 @@ class FallingObject extends Obj {
 }
 ```
 
-### Change settings
+### Change Settings
 
 You can change the size and scale of the world and other values like the target frame count per second or physics update count per frame in `Simulation.java`.
 
