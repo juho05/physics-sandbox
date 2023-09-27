@@ -14,6 +14,8 @@ class Simulation {
     static final double PIXELS_PER_METER = 10;
     // Physics updates per frame
     static final int PHYSICS_SUBSTEPS = 4;
+    // Background color
+    static final Color BACKGROUND_COLOR = Color.WHITE;
 
     static List<Obj> objects = new ArrayList<>();
 
@@ -30,7 +32,8 @@ class Simulation {
     }
 
     static void render(Graphics g) {
-        g.clearRect(0, 0, (int) Math.round(WIDTH * PIXELS_PER_METER), (int) Math.round(HEIGHT * PIXELS_PER_METER));
+        g.setColor(BACKGROUND_COLOR);
+        g.fillRect(0, 0, (int) Math.round(WIDTH * PIXELS_PER_METER), (int) Math.round(HEIGHT * PIXELS_PER_METER));
         for (Obj obj : objects) {
             obj.render(g);
         }

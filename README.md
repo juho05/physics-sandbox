@@ -78,7 +78,7 @@ class FallingObject extends Obj {
 
 ### Change Settings
 
-You can change the size and scale of the world and other values like the target frame count per second or physics update count per frame in `Simulation.java`.
+You can change the size and scale of the world and other values like the target frame count per second, the physics update count per frame or the background color in `Simulation.java`.
 
 ## License
 
