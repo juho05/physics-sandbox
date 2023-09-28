@@ -27,7 +27,13 @@ class Simulation {
 
     static void update(double deltaTime) {
         for (Obj obj : objects) {
+            obj.beforeUpdate(deltaTime);
+        }
+        for (Obj obj : objects) {
             obj.update(deltaTime);
+        }
+        for (Obj obj : objects) {
+            obj.afterUpdate(deltaTime);
         }
     }
 
@@ -52,7 +58,13 @@ abstract class Obj {
     double mass = 1;
     Color color = Color.BLACK;
 
+    void beforeUpdate(double deltaTime) {
+    }
+
     abstract void update(double deltaTime);
+
+    void afterUpdate(double deltaTime) {
+    }
 
     void render(Graphics g) {
         g.setColor(color);
